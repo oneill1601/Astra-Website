@@ -1,3 +1,4 @@
+@import url('modules.css');
 @keyframes stars{to{background-position:150px 150px,310px 340px}}
 @keyframes orb{50%{transform:translate(-80px,30px) scale(1.12);opacity:.65}}
 @keyframes float{50%{transform:translateY(-7px)}}
