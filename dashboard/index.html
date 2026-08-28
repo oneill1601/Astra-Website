@@ -1,30 +1,144 @@
 <!doctype html>
 <html lang="es">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>AstraBot 🌙 — Dashboard</title>
-<link rel="stylesheet" href="../css/dashboard.css?v=20260827-2">
-<link rel="stylesheet" href="../css/animations.css?v=20260827-2">
+<link rel="stylesheet" href="../css/dashboard.css?v=20260827-3">
+<link rel="stylesheet" href="../css/animations.css?v=20260827-3">
 </head>
-<body><div class="starfield" aria-hidden="true"></div>
-<header class="top"><a class="brand" href="../"><span class="brand-icon">🌙</span>AstraBot</a><div class="top-right"><a class="top-link" href="../">← Volver a AstraBot</a><a class="top-link" href="../#features">Funciones</a><div class="user"><span class="avatar-mini">O</span>Usuario</div></div></header>
+<body>
+<div class="starfield" aria-hidden="true"></div>
+
+<header class="top">
+  <a class="brand" href="../"><span class="brand-icon">🌙</span>AstraBot</a>
+  <div class="top-right">
+    <a class="top-link" href="../">← Volver a AstraBot</a>
+    <a class="top-link" href="../#features">Funciones</a>
+    <div class="user"><span class="avatar-mini">O</span>Usuario</div>
+  </div>
+</header>
+
 <main id="picker" class="page view active">
-<section class="intro"><div class="eyebrow">✦ Astra Dashboard</div><h1>¿Qué servidor quieres administrar?</h1><p>Selecciona uno de tus servidores para entrar a su panel de administración. Aquí podrás configurar Astra para cada comunidad de forma independiente.</p></section>
-<div class="toolbar"><div><div class="count">4 servidores disponibles</div><div class="filters"><button class="filter active" data-filter="all">Todos</button><button class="filter" data-filter="installed">Astra instalada</button><button class="filter" data-filter="not">Sin Astra</button></div></div><input id="search" class="search" placeholder="🔍  Buscar servidor..." autocomplete="off"></div>
-<section id="serverGrid" class="grid">
-<article class="server-card" data-name="Astra Community" data-state="installed"><div class="banner moon"></div><div class="server-body"><div class="server-avatar">A</div><div class="server-info"><h2 class="server-name">Astra Community</h2><p class="server-desc">Una comunidad para compartir, hablar y pasar el rato bajo la luz de Astra.</p><div class="meta"><span>👥 152 miembros</span><span>·</span><span><i class="dot"></i> Astra instalada</span></div><div class="status"><span class="installed">● Astra instalada</span><button class="btn" onclick="openAdmin('Astra Community','A','Una comunidad para compartir, hablar y pasar el rato bajo la luz de Astra.')">Administrar →</button></div></div></div></article>
-<article class="server-card" data-name="Dreamy Night" data-state="installed"><div class="banner night"></div><div class="server-body"><div class="server-avatar green">D</div><div class="server-info"><h2 class="server-name">Dreamy Night</h2><p class="server-desc">Un rincón nocturno para conocer gente, charlar y disfrutar de la comunidad.</p><div class="meta"><span>👥 684 miembros</span><span>·</span><span><i class="dot"></i> Astra instalada</span></div><div class="status"><span class="installed">● Astra instalada</span><button class="btn" onclick="openAdmin('Dreamy Night','D','Un rincón nocturno para conocer gente, charlar y disfrutar de la comunidad.')">Administrar →</button></div></div></div></article>
-<article class="server-card" data-name="Moonlight" data-state="not"><div class="banner cloud"></div><div class="server-body"><div class="server-avatar blue">M</div><div class="server-info"><h2 class="server-name">Moonlight</h2><p class="server-desc">Servidor chill para jugar, conversar y compartir momentos con la comunidad.</p><div class="meta"><span>👥 448 miembros</span><span>·</span><span>○ Astra no instalada</span></div><div class="status"><span class="not-installed">○ Astra no instalada</span><a class="btn secondary" href="#" onclick="toast('Aquí se abrirá la invitación de Astra');return false">Añadir Astra</a></div></div></div></article>
-<article class="server-card" data-name="Starlight" data-state="not"><div class="banner night"></div><div class="server-body"><div class="server-avatar">S</div><div class="server-info"><h2 class="server-name">Starlight</h2><p class="server-desc">Una pequeña comunidad de amigos, eventos y conversaciones nocturnas.</p><div class="meta"><span>👥 91 miembros</span><span>·</span><span>○ Astra no instalada</span></div><div class="status"><span class="not-installed">○ Astra no instalada</span><a class="btn secondary" href="#" onclick="toast('Aquí se abrirá la invitación de Astra');return false">Añadir Astra</a></div></div></div></article>
-<div id="empty" class="empty">No encontramos ningún servidor con ese nombre.</div></section>
-<div class="back"><a href="../">← Volver a la página principal de AstraBot</a></div>
+  <section class="intro">
+    <div class="eyebrow">✦ Astra Dashboard</div>
+    <h1>¿Qué servidor quieres administrar?</h1>
+    <p>Selecciona uno de tus servidores para entrar a su panel de administración. Aquí podrás configurar Astra para cada comunidad de forma independiente.</p>
+  </section>
+
+  <div class="toolbar">
+    <div>
+      <div class="count">4 servidores disponibles</div>
+      <div class="filters">
+        <button class="filter active" data-filter="all">Todos</button>
+        <button class="filter" data-filter="installed">Astra instalada</button>
+        <button class="filter" data-filter="not">Sin Astra</button>
+      </div>
+    </div>
+    <input id="search" class="search" placeholder="🔍  Buscar servidor..." autocomplete="off">
+  </div>
+
+  <section id="serverGrid" class="grid">
+    <article class="server-card" data-name="Astra Community" data-state="installed">
+      <div class="banner moon"></div>
+      <div class="server-body"><div class="server-avatar">A</div><div class="server-info">
+        <h2 class="server-name">Astra Community</h2>
+        <p class="server-desc">Una comunidad para compartir, hablar y pasar el rato bajo la luz de Astra.</p>
+        <div class="meta"><span>👥 152 miembros</span><span>·</span><span><i class="dot"></i> Astra instalada</span></div>
+        <div class="status"><span class="installed">● Astra instalada</span><button class="btn" onclick="openAdmin('Astra Community','A','Una comunidad para compartir, hablar y pasar el rato bajo la luz de Astra.')">Administrar →</button></div>
+      </div></div>
+    </article>
+
+    <article class="server-card" data-name="Dreamy Night" data-state="installed">
+      <div class="banner night"></div>
+      <div class="server-body"><div class="server-avatar green">D</div><div class="server-info">
+        <h2 class="server-name">Dreamy Night</h2>
+        <p class="server-desc">Un rincón nocturno para conocer gente, charlar y disfrutar de la comunidad.</p>
+        <div class="meta"><span>👥 684 miembros</span><span>·</span><span><i class="dot"></i> Astra instalada</span></div>
+        <div class="status"><span class="installed">● Astra instalada</span><button class="btn" onclick="openAdmin('Dreamy Night','D','Un rincón nocturno para conocer gente, charlar y disfrutar de la comunidad.')">Administrar →</button></div>
+      </div></div>
+    </article>
+
+    <article class="server-card" data-name="Moonlight" data-state="not">
+      <div class="banner cloud"></div>
+      <div class="server-body"><div class="server-avatar blue">M</div><div class="server-info">
+        <h2 class="server-name">Moonlight</h2>
+        <p class="server-desc">Servidor chill para jugar, conversar y compartir momentos con la comunidad.</p>
+        <div class="meta"><span>👥 448 miembros</span><span>·</span><span>○ Astra no instalada</span></div>
+        <div class="status"><span class="not-installed">○ Astra no instalada</span><a class="btn secondary" href="#" onclick="toast('Aquí se abrirá la invitación de Astra');return false">Añadir Astra</a></div>
+      </div></div>
+    </article>
+
+    <article class="server-card" data-name="Starlight" data-state="not">
+      <div class="banner night"></div>
+      <div class="server-body"><div class="server-avatar">S</div><div class="server-info">
+        <h2 class="server-name">Starlight</h2>
+        <p class="server-desc">Una pequeña comunidad de amigos, eventos y conversaciones nocturnas.</p>
+        <div class="meta"><span>👥 91 miembros</span><span>·</span><span>○ Astra no instalada</span></div>
+        <div class="status"><span class="not-installed">○ Astra no instalada</span><a class="btn secondary" href="#" onclick="toast('Aquí se abrirá la invitación de Astra');return false">Añadir Astra</a></div>
+      </div></div>
+    </article>
+    <div id="empty" class="empty">No encontramos ningún servidor con ese nombre.</div>
+  </section>
+  <div class="back"><a href="../">← Volver a la página principal de AstraBot</a></div>
 </main>
+
 <main id="admin" class="admin view">
-<div class="admin-layout">
-<aside class="sidebar"><div class="side-server"><div id="sideAvatar" class="side-avatar">A</div><div><strong id="sideName">Astra Community</strong><span>Panel de administración</span></div></div><div class="side-title">Configuración</div><nav class="side-nav"><button class="nav-item active">⚙️ General</button><button class="nav-item">👋 Bienvenidas</button><button class="nav-item">🛡️ Moderación</button><button class="nav-item">🤖 Autorrespuestas</button><button class="nav-item">📜 Logs</button><button class="nav-item">🎭 Reacciones</button><button class="nav-item">📊 Estadísticas</button><button class="nav-item">🔐 Permisos</button></nav><div class="side-bottom"><button class="btn secondary" onclick="showPicker()">← Mis servidores</button><a class="btn secondary" href="../">🌙 AstraBot</a></div></aside>
-<section class="admin-content"><div class="admin-head"><div class="admin-title"><div id="adminAvatar" class="admin-avatar">A</div><div><h2 id="adminName">Astra Community</h2><p id="adminDesc">Panel de administración de Astra</p></div></div><div class="admin-actions"><button class="btn secondary" onclick="showPicker()">← Volver</button><a class="btn secondary" href="../">Web de Astra</a></div></div><div class="notice">🔒 Estás administrando <b id="adminName2">Astra Community</b>. Las configuraciones de este panel pertenecen únicamente a este servidor.</div>
-<div class="panel"><div class="panel-head"><div><h3>Funciones de Astra</h3><p>Selecciona una sección para configurar el bot en tu servidor.</p></div></div><section class="modules"><article class="module"><span class="tag">Servidor</span><div class="ico">⚙️</div><h3>Configuración general</h3><p>Opciones principales, idioma, canales y comportamiento general de Astra.</p></article><article class="module"><span class="tag">Comunidad</span><div class="ico">👋</div><h3>Bienvenidas</h3><p>Mensajes, canales y configuración para nuevos miembros.</p></article><article class="module"><span class="tag">Seguridad</span><div class="ico">🛡️</div><h3>Moderación</h3><p>Automoderación, filtros, sanciones y herramientas de seguridad.</p></article><article class="module"><span class="tag">Automático</span><div class="ico">🤖</div><h3>Autorrespuestas</h3><p>Disparadores, palabras clave y respuestas automáticas.</p></article><article class="module"><span class="tag">Registro</span><div class="ico">📜</div><h3>Logs</h3><p>Configura qué eventos registra Astra y en qué canales.</p></article><article class="module"><span class="tag">Social</span><div class="ico">🎭</div><h3>Reacciones</h3><p>Respuestas, GIFs y acciones automáticas de la comunidad.</p></article><article class="module"><span class="tag">Datos</span><div class="ico">📊</div><h3>Estadísticas</h3><p>Consulta actividad, crecimiento y estadísticas de tu comunidad.</p></article><article class="module"><span class="tag">Acceso</span><div class="ico">🔐</div><h3>Permisos</h3><p>Define qué roles pueden utilizar y administrar las funciones de Astra.</p></article></section></div></section>
-</div></main>
+  <div class="admin-layout">
+    <aside class="sidebar">
+      <div class="side-server">
+        <div id="sideAvatar" class="side-avatar">A</div>
+        <div><strong id="sideName">Astra Community</strong><span>Panel de administración</span></div>
+      </div>
+      <div class="side-title">Configuración</div>
+      <nav class="side-nav">
+        <button class="nav-item active">⚙️ General</button>
+        <button class="nav-item">👋 Bienvenidas</button>
+        <button class="nav-item">🚀 Boosters</button>
+        <button class="nav-item">🛡️ Moderación</button>
+        <button class="nav-item">🤖 Autorrespuestas</button>
+        <button class="nav-item">📜 Logs</button>
+        <button class="nav-item">🎭 Reacciones</button>
+        <button class="nav-item">📊 Estadísticas</button>
+        <button class="nav-item">🔐 Permisos</button>
+      </nav>
+      <div class="side-bottom">
+        <button class="btn secondary" onclick="showPicker()">← Mis servidores</button>
+        <a class="btn secondary" href="../">🌙 AstraBot</a>
+      </div>
+    </aside>
+
+    <section class="admin-content">
+      <div class="admin-head">
+        <div class="admin-title">
+          <div id="adminAvatar" class="admin-avatar">A</div>
+          <div><h2 id="adminName">Astra Community</h2><p id="adminDesc">Panel de administración de Astra</p></div>
+        </div>
+        <div class="admin-actions">
+          <button class="btn secondary" onclick="showPicker()">← Volver</button>
+          <a class="btn secondary" href="../">Web de Astra</a>
+        </div>
+      </div>
+      <div class="notice">🔒 Estás administrando <b id="adminName2">Astra Community</b>. Las configuraciones de este panel pertenecen únicamente a este servidor.</div>
+      <div class="panel">
+        <div class="panel-head"><div><h3>Funciones de Astra</h3><p>Selecciona una sección para configurar el bot en tu servidor.</p></div></div>
+        <section class="modules">
+          <article class="module"><span class="tag">Servidor</span><div class="ico">⚙️</div><h3>Configuración general</h3><p>Opciones principales, idioma, canales y comportamiento general de Astra.</p></article>
+          <article class="module"><span class="tag">Comunidad</span><div class="ico">👋</div><h3>Bienvenidas</h3><p>Mensajes, canales y configuración para nuevos miembros.</p></article>
+          <article class="module"><span class="tag">Comunidad</span><div class="ico">🚀</div><h3>Boosters</h3><p>Configuración visual de las funciones de Booster de Astra.</p></article>
+          <article class="module"><span class="tag">Seguridad</span><div class="ico">🛡️</div><h3>Moderación</h3><p>Herramientas de moderación y seguridad disponibles para Astra.</p></article>
+          <article class="module"><span class="tag">Automático</span><div class="ico">🤖</div><h3>Autorrespuestas</h3><p>Disparadores, palabras clave y respuestas automáticas.</p></article>
+          <article class="module"><span class="tag">Registro</span><div class="ico">📜</div><h3>Logs</h3><p>Configura qué eventos registra Astra y en qué canales.</p></article>
+          <article class="module"><span class="tag">Social</span><div class="ico">🎭</div><h3>Reacciones</h3><p>Respuestas, GIFs y acciones sociales de la comunidad.</p></article>
+          <article class="module"><span class="tag">Datos</span><div class="ico">📊</div><h3>Estadísticas</h3><p>Actividad, crecimiento y estadísticas visuales del servidor.</p></article>
+          <article class="module"><span class="tag">Acceso</span><div class="ico">🔐</div><h3>Permisos</h3><p>Define qué roles pueden utilizar y administrar las funciones de Astra.</p></article>
+        </section>
+      </div>
+    </section>
+  </div>
+</main>
+
 <div id="toast" class="toast"></div>
-<script src="../js/dashboard.js?v=20260827-2"></script>
-</body></html>
+<script src="../js/dashboard.js?v=20260827-3"></script>
+</body>
+</html>
